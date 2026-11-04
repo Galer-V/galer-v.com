@@ -7,3 +7,5 @@ The static HTML, CSS, and SVG files in this repository are published directly fr
 Preview locally: `python3 -m http.server 4318`, then open http://localhost:4318.
 
 DNS remains at GoDaddy. Apex A records point to GitHub Pages; `www` is a CNAME to `galer-v.github.io`. Email records are managed separately and should be preserved.
+
+See [SETUP.md](SETUP.md) for DNS values, publishing instructions, HTTPS checks, and recovery notes.
