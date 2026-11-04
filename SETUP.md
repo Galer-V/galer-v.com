@@ -46,9 +46,9 @@ gh api repos/Galer-V/galer-v.com/pages/health
 
 ## HTTPS and verification
 
-GitHub provisions and renews the certificate. Both domains passed GitHub's DNS health checks after migration, and HTTP returned the company page from `Server: GitHub.com`. At the initial handoff, certificate issuance was still pending; DNS validity alone is not proof of HTTPS readiness.
+GitHub provisions and renews the certificate. On November 4, 2026, both domains passed GitHub's DNS health checks. GitHub approved a certificate covering both domains and HTTPS enforcement was enabled. Verified: `https://galer-v.com` returned HTTP 200 from `Server: GitHub.com`, and `https://www.galer-v.com` returned HTTP 301 to `https://galer-v.com/`, both with valid certificate verification.
 
-Once the certificate is issued, enable **Enforce HTTPS** in repository Settings → Pages, or run:
+HTTPS enforcement is already enabled. To restore it if settings are reset, use **Enforce HTTPS** in repository Settings → Pages, or run:
 
 ```sh
 gh api --method PUT repos/Galer-V/galer-v.com/pages -F https_enforced=true
@@ -66,6 +66,8 @@ dig +short CNAME www.galer-v.com @ns51.domaincontrol.com
 ```
 
 Expected answers are the four addresses and CNAME above. Avoid extra A/AAAA records pointing at old hosts, registrar forwarding, or wildcard records. If GitHub reports DNS valid but HTTPS is unavailable, check Settings → Pages for certificate issuance status; issuance is asynchronous.
+
+During the initial setup, certificate issuance stalled until the custom domain was removed and immediately re-added in GitHub Pages settings, following GitHub's documented troubleshooting procedure. GitHub then approved the certificate for both names. This settings change created automatic `CNAME` commits; they have been pulled into the local checkout. Reference: https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https
 
 ## Recovery and history
 
