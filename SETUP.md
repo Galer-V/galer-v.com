@@ -75,4 +75,4 @@ Revert a bad content commit with `git revert <commit>` and push. Preserve the `C
 
 The initial website was briefly deployed to ChatGPT Sites before the owner requested company hosting. Its company-domain bindings were removed, and its duplicate preview was made owner-only with explicit permission. The old local checkout in `/Users/phil/coding/galer-v/website/` is superseded and must not be used for future deployments. This repository is the canonical source.
 
-Company name and registered-office address were taken from the LLC formation documents in `/Users/phil/Dropbox/Galer-V/Formation/`. Only the intended public company details are included in this repository; no formation documents, account credentials, or tax identifiers were copied.
+The company name was taken from the LLC formation documents. The registered office is also the owner’s home address and must not be displayed on this website. It was removed from the page on November 5, 2026 at the owner’s request. Do not re-add a street address without explicit authorization. No formation documents, account credentials, or tax identifiers are included in the current website source.
